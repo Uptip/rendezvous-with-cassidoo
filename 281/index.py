@@ -1,7 +1,10 @@
+import math
+
+
 def max_subarray(arr, n):
     if len(arr) < n:
         return None
-    max = 0
+    max = -1 * math.inf
     subarray = []
     for index in range(len(arr) - n + 1):
         sample = arr[index : index + n]
@@ -13,3 +16,4 @@ def max_subarray(arr, n):
 
 assert max_subarray([-4, 2, -5, 1, 2, 3, 6, -5, 1], 4) == [1, 2, 3, 6]
 assert max_subarray([1, 2, 0, 5], 2) == [0, 5]
+assert max_subarray([-1, -2, 0, -5], 2) == [-2, 0]
