@@ -1,6 +1,6 @@
 def sum_every_other(num: int) -> int:
     num = str(num).replace(".", "")
-    return sum([int(num[i]) for i in range(len(num)) if i % 2 == 1])
+    return sum([int(num[i]) for i in range(1, len(num), 2)])
 
 
 assert sum_every_other(548915381) == 26
