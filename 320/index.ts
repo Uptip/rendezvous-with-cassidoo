@@ -6,10 +6,8 @@ const operands = [
 ];
 
 const addOperators = (source: number, target: number) => {
-  const digits = `${source}`.split('').map(Number);
+  const [firstDigit, ...digits] = `${source}`.split('').map(Number);
   const results = [] as string[];
-
-  const [first, ...rest] = digits;
 
   const recurse = (
     digits: number[],
@@ -36,7 +34,7 @@ const addOperators = (source: number, target: number) => {
     });
   };
 
-  recurse(rest, target, first, `${first}`);
+  recurse(digits, target, firstDigit, `${firstDigit}`);
 
   return results;
 };
